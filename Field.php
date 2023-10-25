@@ -1,14 +1,15 @@
 <?php
 class Field{
     private $name;
+    private $type;
+    private $text;
+    private $default;
+    private $id;
 
-    public function _construc($name){
+    public function _construct($name, $type){
         $this->name = $name;
+        $this->type = $type;
     }
 
-    public function render(){
-        echo "<p><label for=\"id_$this->name\">$this->name: </label>\n";
-        echo "<input id=\"id_$this->name\" type=\"$this->type\" name=\"$this->name\"></input></p>";
-    }
-
+    abstract public function render();
 }

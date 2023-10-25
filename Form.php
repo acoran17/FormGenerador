@@ -5,14 +5,16 @@ class Form {
     private $method;
     private $fields;
 
-    public function _costruct($action, $title, $method){
+    public function __construct($action, $title, $method)
+    {
         $this->action = $action;
         $this->title = $title;
         $this->method = $method;
         $this->fields = [];
+        
     }
 
-    public function add(Field $field){
+    public function add(Field $field) {
         $this->fields[] = $field;
     }
 
@@ -21,10 +23,10 @@ class Form {
         echo " action=\"$this->action\" ";
         echo " method=\"$this->method\">\n";
         echo "<h2>$this->title</h2>";
-        foreach($this->fields as $field){
+        foreach($this->fields as $field) {
             $field->render();
         }
-        echo "<input type=\"submit\" value=\"enviar\">\n";
-        echo "</form>";
+        echo "\t <br><input type=\"submit\" value=\"enviar\">\n";
+        echo "\t</form>\n";
     }
 }
