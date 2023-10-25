@@ -2,7 +2,7 @@
 
 class SimpleField extends Field{
     public function render(){
-        if($thiw->tpye = "checkbox"){
+        if($this->type = "checkbox"){
             if($this->default == "true"){
                 $value = "checked";
             }else{
